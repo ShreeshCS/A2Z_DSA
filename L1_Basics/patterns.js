@@ -76,3 +76,28 @@ function pattern7(n){
   }
 }
 pattern7(5);
+
+function printInvertedPyramid(n) {
+  for (let i = 0; i < n; i++) {
+    // Generate spaces and stars as strings
+    const spaces = ' '.repeat(i);
+    const stars = '*'.repeat(2 * (n - i) - 1);
+
+    // Write the combined string to the output
+    process.stdout.write(spaces + stars + '\n');
+  }
+}
+
+printInvertedPyramid(5);
+
+function pattern8(n){
+  for (let i = 0; i < n; i++) {
+    process.stdout.write('*'.repeat(i+1));
+    process.stdout.write('\n');
+  }
+  for(let i=0; i<n; i++){
+    process.stdout.write('*'.repeat(n-i-1))
+    process.stdout.write('\n');
+  }
+}
+pattern8(5);
