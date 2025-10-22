@@ -93,3 +93,53 @@ process.on('exit', (code) => {
 
 ## Summary
 The `process` object is a powerful tool in Node.js for interacting with the runtime environment. It provides methods for input/output, managing environment variables, handling events, and more. In your code, `process.stdout.write()` is used to print inline output, which is particularly useful for patterns or progress indicators.
+
+---
+
+# Symmetrical Pyramid Pattern
+
+To print a symmetrical pyramid where the number of stars increases by two in each row, you can use the following algorithm:
+
+## Algorithm:
+1. **Outer Loop**: Iterate through the rows of the pyramid.
+2. **Spaces**: For each row, calculate the number of spaces needed to center the stars. This is determined by the total rows minus the current row index.
+3. **Stars**: For each row, calculate the number of stars. The number of stars in row `i` is `2 * i + 1`.
+4. **Print**: Print the spaces first, followed by the stars, and move to the next line.
+
+## Pseudocode:
+```
+for i from 0 to n-1:
+    print (n - i - 1) spaces
+    print (2 * i + 1) stars
+    move to the next line
+```
+
+## Example in JavaScript:
+```javascript
+function printSymmetricalPyramid(n) {
+  for (let i = 0; i < n; i++) {
+    // Print spaces
+    process.stdout.write(' '.repeat(n - i - 1));
+    // Print stars
+    process.stdout.write('*'.repeat(2 * i + 1));
+    // Move to the next line
+    process.stdout.write('\n');
+  }
+}
+
+printSymmetricalPyramid(5);
+```
+
+## Explanation:
+- For `n = 5`, the output will be:
+```
+    *
+   ***
+  *****
+ *******
+*********
+```
+- **Spaces**: The number of spaces decreases as the row index increases.
+- **Stars**: The number of stars increases by 2 for each subsequent row.
+
+This algorithm ensures the pyramid is symmetrical and the stars increase by two in each row.
