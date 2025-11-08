@@ -1,103 +1,123 @@
-function pattern1(n) {
+function prints(val){
+  process.stdout.write(val);
+}
+
+(function pattern1(n) {
+  console.log('pattern1');
   for (let i = 0; i < n; i++) {
     for (let j = 0; j < n; j++) {
-      process.stdout.write("*"); // Print inline
+      prints("*"); // Print inline
     }
-    process.stdout.write("\n"); // Move to the next line after each row
+    prints("\n"); // Move to the next line after each row
   }
-}
+})(5);
+console.log('------------------------------');
 
-pattern1(5);
-
-function pattern2(n) {
+(function pattern2(n) {
+  console.log('pattern2');
   for (let i = 0; i < n; i++) {
     for (let j = 0; j <= i; j++) {
-      process.stdout.write("*");
+      prints("*");
     }
-    process.stdout.write("\n");
+    prints("\n");
   }
-}
+})(5);
+console.log('------------------------------');
 
-pattern2(5);
-
-function pattern3(n) {
+(function pattern3(n) {
+  console.log('pattern3');
   for (let i = 0; i < n; i++) {
     for (let j = 0; j <= i; j++) {
-      process.stdout.write(`${i + 1}`);
+      prints(`${i + 1}`);
     }
-    process.stdout.write("\n");
+    prints("\n");
   }
-}
+})(5);
+console.log('------------------------------');
 
-pattern3(5);
-
-function pattern4(n) {
+(function pattern4(n) {
+  console.log('pattern4');
   for (let i = 0; i < n; i++) {
     for (let j = n; j > i; j--) {
-      process.stdout.write(`*`);
+      prints(`*`);
     }
-    process.stdout.write("\n");
+    prints("\n");
   }
-}
-pattern4(5);
+})(5);
+console.log('------------------------------');
 
-function pattern5(n){
+(function pattern5(n){
+  console.log('pattern5');
   for (let i = 0; i < n; i++) {
     for (let j = n; j > i; j--) {
-      process.stdout.write(`${n-j+1}`);
+      prints(`${n-j+1}`);
     }
-    process.stdout.write("\n");
+    prints("\n");
   }
-}
-pattern5(5);
+})(5);
+console.log('------------------------------');
 
-function pattern6(n){
+(function pattern6(n){
+  console.log('pattern6');
   for(let i =0 ; i<n; i++){
     for(let j=0; j<n-i-1; j++){
-      process.stdout.write(' ');
+      prints(' ');
     }
     for(let j=0; j<2*i+1; j++){
-      process.stdout.write('*');
+      prints('*');
     }
     for(let j=0; j<n-i-1; j++){
-      process.stdout.write(' ');
+      prints(' ');
     }
-    process.stdout.write('\n');
+    prints('\n');
   }
-}
-pattern6(5)
+})(5);
+console.log('------------------------------');
 
-function pattern7(n){
-  for (let i = n-1; i>=0; i--) {
-    process.stdout.write(' '.repeat(n-1-i));
-    process.stdout.write('*'.repeat(2*i+1));
-    process.stdout.write(' '.repeat(n-1-i));
-    process.stdout.write('\n');
+(function pattern7(n){
+  console.log('pattern7');
+  for (let i = 0; i<n; i++) {
+    prints(' '.repeat(i));
+    prints('*'.repeat(2*n-2*i-1));
+    prints('\n');
   }
-}
-pattern7(5);
+})(5);
+console.log('------------------------------');
 
-function printInvertedPyramid(n) {
+(function pattern8(n) {
+  console.log('pattern8');
   for (let i = 0; i < n; i++) {
     // Generate spaces and stars as strings
     const spaces = ' '.repeat(i);
     const stars = '*'.repeat(2 * (n - i) - 1);
 
     // Write the combined string to the output
-    process.stdout.write(spaces + stars + '\n');
+    prints(spaces + stars + '\n');
   }
-}
+})(5);
+console.log('------------------------------');
 
-printInvertedPyramid(5);
-
-function pattern8(n){
+(function pattern9(n){
+  console.log('pattern9');
   for (let i = 0; i < n; i++) {
-    process.stdout.write('*'.repeat(i+1));
-    process.stdout.write('\n');
+    prints('*'.repeat(i+1));
+    prints('\n');
   }
   for(let i=0; i<n; i++){
-    process.stdout.write('*'.repeat(n-i-1))
-    process.stdout.write('\n');
+    prints('*'.repeat(n-i-1))
+    prints('\n');
   }
-}
-pattern8(5);
+})(5);
+console.log('------------------------------');
+
+(function pattern10(n){
+  console.log('pattern10');
+  // Implemented as a simple right-angle triangle so the file runs
+  for(let i =0 ;i<n ;i++){
+    for (let j = 0; j <= i; j++) {
+      prints('*');
+    }
+    prints('\n');
+  }
+})(5);
+console.log('------------------------------');
