@@ -146,3 +146,37 @@ console.log("------------------------------");
 	}
 })(5);
 console.log("------------------------------");
+
+(function pattern12(n) {
+	let val = 1;
+	console.log("pattern12");
+	for (let i = 0; i < n; i++) {
+		for (let j = 0; j <= i; j++) {
+			prints(`${val++}  `);
+		}
+		prints("\n");
+	}
+})(5);
+console.log("------------------------------");
+
+(function pattern14(n) {
+	console.log("pattern14");
+	for (let i = 0; i < n; i++) {
+		let ch = 65; // ASCII for 'A'
+		for (let j = 0; j <= i; j++) {
+			prints(String.fromCharCode(ch) + " ");
+			ch++;
+		}
+		prints("\n");
+	}
+})(5);
+console.log("------------------------------");
+
+// (function pattern15(n) {
+// 	console.log("pattern15");
+// 	for (let i = 0; i < n; i++) {
+// 		for (let j = 0; j < n; j++) {}
+// 		prints("\n");
+// 	}
+// })(7);
+// console.log("------------------------------");
