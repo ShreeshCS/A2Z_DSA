@@ -39,3 +39,20 @@ function merge(arr, low, mid, high) {
 }
 
 export default mergeSort;
+
+/**
+ * If the merge cost was O(n²), what would the total time complexity of merge sort be?
+ * 
+ * If the merge step were O(n²), the recurrence would be
+ * T(n)=2T(n/2)+O(n²)
+ * The root of the recursion tree would dominate the total cost, and the overall time complexity would be O(n²)
+ * 
+ * Why This Insight Matters (Big Picture)
+
+
+This explains why merge sort’s efficiency lives or dies by the merge step.
+
+Linear merge → O(n log n) ✅
+
+Quadratic merge → O(n²) ❌ (same as bubble/selection sort)
+ */
